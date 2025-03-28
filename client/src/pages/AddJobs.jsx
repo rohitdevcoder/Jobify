@@ -4,7 +4,7 @@ import { JobCategories, JobLocations } from '../assets/assets'
 import axios from 'axios'
 import { AppContext } from '../context/AppContext'
 import { toast } from 'react-toastify'
-import { data } from 'react-router-dom'
+// import { data } from 'react-router-dom'
 
 function AddJobs() {
   const [title,setTitle]= useState('')

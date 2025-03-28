@@ -2,12 +2,12 @@ import { createContext, useEffect, useState } from "react";
 // import { jobsData } from "../assets/assets";
 import axios from "axios";
 import { toast } from "react-toastify";
-import {useAuth, useUser} from '@clerk/clerk-react'
+import {useAuth,useUser} from '@clerk/clerk-react'
 
 export const AppContext = createContext();
 
 const backendUrl = import.meta.env.VITE_BACKEND_URL;
-const {user}= useUser()
+const { user } = useUser(null)
 const {getToken} = useAuth()
 
 export const AppContextProvider = (props) => {
@@ -113,6 +113,8 @@ const fetchUserApplications = async ()=>{
     }
   },[user])
 
+
+
   const value = {
     searchFilter,
     setSearchFilter,
@@ -130,7 +132,8 @@ const fetchUserApplications = async ()=>{
     userData,setUserData,
     userApplications,setUserApplications,
     fetchUserData,
-    fetchUserApplications
+    fetchUserApplications,
+    user
   };
 
   return (
